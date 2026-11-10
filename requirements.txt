@@ -1,0 +1,46 @@
+# ============================================================
+# 本地 RAG 助手依赖清单
+# ------------------------------------------------------------
+# 安装：
+#   python -m pip install -r requirements.txt
+#
+# 说明：
+# 1) 版本使用“兼容区间”而不是死锁精确版本，方便在不同平台上安装；
+#    本项目实际验证过的版本写在每组的注释里。
+# 2) sentence-transformers 会自动安装 torch / transformers / numpy 等
+#    传递依赖。如果需要 GPU 版 torch，请先按平台安装匹配的 torch，
+#    再执行本文件，避免 pip 装成 CPU 版。
+# 3) mcp 只有运行 mcp_server.py 时才需要；Web/CLI 不依赖它。
+# ============================================================
+
+# ---- Web UI 与登录 ----
+# 验证版本：streamlit 1.66.1 / streamlit-authenticator 0.4.2 / PyYAML 6.0.3
+streamlit>=1.40,<2.0
+streamlit-authenticator>=0.4,<1.0
+PyYAML>=6.0,<7.0
+
+# ---- RAG 核心：向量库 + 本地 embedding ----
+# 验证版本：chromadb 1.5.9 / sentence-transformers 2.7.0 / torch 2.2.2
+# chromadb >=0.5 的 EmbeddingFunction 契约要求 get_config/build_from_config；
+# 本项目已按该契约实现，1.x 版本同样可用。
+chromadb>=1.0,<2.0
+sentence-transformers>=2.7,<3.0
+
+# torch 2.2.x 与 numpy 2.x 存在兼容性风险；锁定 1.x 更稳。
+# 如果你的平台需要更新版本的 torch，可先手动安装 torch，再放宽这一行。
+numpy>=1.26,<2.0
+
+# ---- 文档解析 ----
+# 验证版本：pypdf 6.21.4 / python-docx 1.2.0 / python-pptx 1.0.2 / openpyxl 3.1.5
+pypdf>=4.0,<7.0
+python-docx>=1.1,<2.0
+python-pptx>=0.6.23,<2.0
+openpyxl>=3.1,<4.0
+
+# ---- Ollama HTTP 调用 ----
+requests>=2.31,<3.0
+
+# ---- MCP server（可选）----
+# 只有运行 python mcp_server.py 时才需要；当前环境若未安装，
+# Web 端和 CLI 仍可正常工作。
+mcp>=1.0,<2.0

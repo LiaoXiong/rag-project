@@ -1,0 +1,37 @@
+# 井号开头是注释，不生效
+
+# 排除单个文件
+.dev_env
+dev_auth_config.yaml
+AGENTS.md
+chat_sessions.json
+file_hashes.json
+
+# macOS 系统文件
+.DS_Store
+**/.DS_Store
+
+# 排除某一类型文件（通配符）
+# *.log
+# *.pyc
+# *.tmp
+
+# 排除整个目录（末尾加 /）
+skills/
+__pycache__/
+
+# 排除目录下指定类型文件
+# docs/*.md
+chromadb/*
+models/*
+docs/*
+uploaded_docs/*
+
+
+
+# 取反：不排除某个文件（前面加 !）
+# !important.log
+
+# 通配符 **：匹配任意层级目录
+# **/__pycache__/
+# **/*.pyc

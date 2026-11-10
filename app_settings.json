@@ -1,0 +1,9 @@
+{
+  "docs_dir": "./docs",
+  "embedding_model": "./models/bge-small-zh-v1.5",
+  "use_llm": true,
+  "llm_model": "qwen2.5:7b",
+  "ollama_url": "http://localhost:11434",
+  "selected_domain": "全部",
+  "top_k": 10
+}

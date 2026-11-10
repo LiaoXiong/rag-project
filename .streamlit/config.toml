@@ -1,0 +1,15 @@
+# Streamlit 主题配置
+# ------------------------------------------------------------
+# 这些值只影响 Streamlit 原生组件（滑块、复选框、Tab 指示线、输入框焦点等）。
+# app.py 里的 THEME_CSS 负责更细的布局/卡片/聊天样式；两者保持同一套色板。
+#
+# 为什么需要这个文件：
+# Streamlit 的默认主色是红色，滑块、复选框、Tab 下划线都会用主色；
+# 只在 CSS 里覆盖容易漏掉内部伪元素，直接在这里设置主题色最稳。
+[theme]
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#F3F6FB"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#111827"
+font = "sans serif"

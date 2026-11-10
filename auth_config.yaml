@@ -1,0 +1,14 @@
+credentials:
+  usernames:
+    liaoxiong:  # 登录时需要的账户名
+      email: admin@admin.com  # 随便写，不影响使用
+      name: admin  # 随便写，登录后显示的名称
+      # 可以用以下 Python 指令生成：python -c "import streamlit_authenticator as stauth; print(stauth.Hasher.hash('你的密码'))"
+      password: "密码转换后的字符串"  # 登录密码转换后的字符串，防止密码明文
+cookie:
+  expiry_days: 30  # 免登录天数
+  key: "placeholder_will_be_overwritten"  # 随便写，自己理解就好
+  name: rag_auth_cookie  # 随便写，自己理解就好
+preauthorized:
+  emails:
+  - admin@admin.com  # 随便写，和上面的 email 保持一致即可
